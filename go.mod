@@ -1,4 +1,4 @@
-module github.com/getbrevo/brevo-go
+module github.com/tdlehman/brevo-go
 
 go 1.17
 
