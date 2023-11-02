@@ -32,7 +32,7 @@ type SendSmtpEmail struct {
 	// Id of the template.
 	TemplateId int64 `json:"templateId,omitempty"`
 	// Pass the set of attributes to customize the template. For example, {\"FNAME\":\"Joe\", \"LNAME\":\"Doe\"}. It's considered only if template is in New Template Language format.
-	Params *interface{} `json:"params,omitempty"`
+	Params interface{} `json:"params,omitempty"`
 	// You can customize and send out multiple versions of a mail. templateId can be customized only if global parameter contains templateId. htmlContent and textContent can be customized only if any of the two, htmlContent or textContent, is present in global parameters. Some global parameters such as **to(mandatory), bcc, cc, replyTo, subject** can also be customized specific to each version. Total number of recipients in one API request must not exceed 2000. However, you can still pass upto 99 recipients maximum in one message version. The size of individual params in all the messageVersions shall not exceed 100 KB limit and that of cumulative params shall not exceed 1000 KB. You can follow this **step-by-step guide** on how to use **messageVersions** to batch send emails - https://developers.brevo.com/docs/batch-send-transactional-emails
 	MessageVersions []SendSmtpEmailMessageVersions `json:"messageVersions,omitempty"`
 	// Tag your emails to find them more easily
